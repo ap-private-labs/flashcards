@@ -1,0 +1,53 @@
+{
+    "class": "Machine Learning",
+    "cards": [
+        {
+            "front": "What is the <b>bias-variance tradeoff</b>?",
+            "back": "For a model's expected prediction error:$$\\text{Error} = \\text{Bias}^2 + \\text{Variance} + \\text{Irreducible Noise}$$<b>Bias</b>: error from wrong assumptions (underfitting).<br><b>Variance</b>: sensitivity to training data fluctuations (overfitting).<br>Increasing model complexity decreases bias but increases variance."
+        },
+        {
+            "front": "Write the <b>logistic regression</b> loss function.",
+            "back": "Binary cross-entropy (log loss):$$\\mathcal{L}(\\theta) = -\\frac{1}{n}\\sum_{i=1}^n \\left[ y_i \\log \\sigma(\\theta^\\top x_i) + (1 - y_i)\\log(1 - \\sigma(\\theta^\\top x_i)) \\right]$$where $\\sigma(z) = \\frac{1}{1 + e^{-z}}$ is the sigmoid function."
+        },
+        {
+            "front": "What is <b>gradient descent</b>? Write the update rule.",
+            "back": "Iterative optimization: move parameters in the direction of steepest descent.$$\\theta_{t+1} = \\theta_t - \\eta \\nabla_{\\theta} \\mathcal{L}(\\theta_t)$$<b>Variants:</b><br>• Batch: full dataset per step<br>• Stochastic (SGD): one sample per step<br>• Mini-batch: small batch per step"
+        },
+        {
+            "front": "Define <b>regularization</b>. Compare L1 and L2.",
+            "back": "Adding a penalty to the loss to prevent overfitting.<br><br><b>L2 (Ridge):</b> $\\mathcal{L} + \\lambda\\|\\theta\\|_2^2$ — shrinks weights toward zero, smooth.<br><br><b>L1 (Lasso):</b> $\\mathcal{L} + \\lambda\\|\\theta\\|_1$ — induces <b>sparsity</b> (drives some weights exactly to 0).<br><br>Elastic Net combines both: $\\lambda_1\\|\\theta\\|_1 + \\lambda_2\\|\\theta\\|_2^2$."
+        },
+        {
+            "front": "What is a <b>kernel</b> in SVMs?",
+            "back": "A function $K(x, x') = \\langle \\phi(x), \\phi(x') \\rangle$ that computes the inner product in a high-dimensional feature space <b>without</b> explicitly computing $\\phi$.<br><br>Common kernels:<br>• Linear: $K = x^\\top x'$<br>• RBF: $K = \\exp(-\\gamma\\|x - x'\\|^2)$<br>• Polynomial: $K = (x^\\top x' + c)^d$"
+        },
+        {
+            "front": "Explain the <b>backpropagation</b> algorithm.",
+            "back": "Efficient computation of $\\nabla_\\theta \\mathcal{L}$ in neural networks using the <b>chain rule</b>.<br><br>1. <b>Forward pass</b>: compute activations layer by layer<br>2. <b>Backward pass</b>: propagate error gradients from output to input:$$\\frac{\\partial \\mathcal{L}}{\\partial W^{(l)}} = \\frac{\\partial \\mathcal{L}}{\\partial a^{(l)}} \\cdot \\frac{\\partial a^{(l)}}{\\partial W^{(l)}}$$Gradients are reused via dynamic programming (reverse-mode autodiff)."
+        },
+        {
+            "front": "What is <b>cross-validation</b>? Why use it?",
+            "back": "<b>k-fold CV</b>: split data into $k$ folds, train on $k-1$, validate on the held-out fold. Repeat $k$ times and average.<br><br><b>Why</b>: gives a more robust estimate of generalization error than a single train/test split, especially with limited data.<br><br>Special case: <b>LOOCV</b> ($k = n$) — low bias, high variance."
+        },
+        {
+            "front": "State <b>Bayes' Theorem</b> and its role in classification.",
+            "back": "$$P(y \\mid x) = \\frac{P(x \\mid y)\\, P(y)}{P(x)}$$In classification: pick $\\hat{y} = \\arg\\max_y P(y \\mid x)$.<br><br><b>Naive Bayes</b> assumes features are conditionally independent:$$P(x \\mid y) = \\prod_{j=1}^d P(x_j \\mid y)$$Fast, works well for text (spam filtering, sentiment)."
+        },
+        {
+            "front": "What is <b>PCA</b> (Principal Component Analysis)?",
+            "back": "Dimensionality reduction by projecting data onto the directions of <b>maximum variance</b>.<br><br>1. Center data: $\\bar{X} = X - \\mu$<br>2. Compute covariance: $C = \\frac{1}{n}\\bar{X}^\\top \\bar{X}$<br>3. Eigendecompose $C = V\\Lambda V^\\top$<br>4. Project onto top $k$ eigenvectors<br><br>Equivalently: truncated SVD of the centered data matrix."
+        },
+        {
+            "front": "Explain the <b>curse of dimensionality</b>.",
+            "back": "As dimensionality $d$ grows:<br><br>• Data becomes <b>sparse</b>: volume grows as $r^d$, so exponentially more data needed<br>• Distances <b>concentrate</b>: $\\frac{\\max \\|x\\| - \\min \\|x\\|}{\\min \\|x\\|} \\to 0$ — nearest-neighbor methods break down<br>• More features → more parameters → higher risk of <b>overfitting</b>"
+        },
+        {
+            "front": "What is the <b>VC dimension</b>?",
+            "back": "The largest number of points that can be <b>shattered</b> (classified in all $2^n$ ways) by a hypothesis class $\\mathcal{H}$.<br><br>Examples:<br>• Linear classifiers in $\\mathbb{R}^d$: VC dim = $d + 1$<br>• Finite $\\mathcal{H}$: VC dim $\\le \\log_2 |\\mathcal{H}|$<br><br>Controls generalization via: $\\text{error} \\le \\hat{\\text{error}} + O\\!\\left(\\sqrt{\\frac{\\text{VC}}{n}}\\right)$"
+        },
+        {
+            "front": "What is an <b>ensemble method</b>? Compare bagging vs. boosting.",
+            "back": "<b>Ensemble</b>: combine multiple weak learners for better performance.<br><br><b>Bagging</b> (e.g., Random Forest):<br>• Train independently on bootstrap samples<br>• Average/vote — reduces <b>variance</b><br><br><b>Boosting</b> (e.g., AdaBoost, XGBoost):<br>• Train sequentially, each model focuses on previous errors<br>• Weighted combination — reduces <b>bias</b>"
+        }
+    ]
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Flashcards</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+            startup: { typeset: false }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Math Flashcards</h1>
+            <p class="subtitle">Study tool for exam prep</p>
+        </header>
+
+        <nav class="class-tabs" id="classTabs"></nav>
+
+        <div class="controls">
+            <label class="file-upload btn btn-secondary">
+                <span id="importLabel">Import JSON</span>
+                <input type="file" id="fileInput" accept=".json" hidden>
+            </label>
+            <button class="btn btn-primary" id="shuffleBtn" disabled>Shuffle</button>
+            <div class="filter-group">
+                <button class="btn btn-filter active" data-filter="all" id="filterAll">All <span class="badge" id="badgeAll">0</span></button>
+                <button class="btn btn-filter" data-filter="review" id="filterReview">Needs Review <span class="badge badge-review" id="badgeReview">0</span></button>
+                <button class="btn btn-filter" data-filter="known" id="filterKnown">Known <span class="badge badge-known" id="badgeKnown">0</span></button>
+            </div>
+        </div>
+
+        <div class="progress-bar-container" id="progressContainer" style="display:none;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span class="progress-label" id="progressLabel">0 / 0 known</span>
+        </div>
+
+        <div class="card-area" id="cardArea">
+            <div class="empty-state" id="emptyState">
+                <div class="empty-icon">📂</div>
+                <p>Import a JSON file to get started</p>
+                <p class="hint">Format: <code>{ "class": "Name", "cards": [{ "front": "...", "back": "..." }] }</code></p>
+            </div>
+
+            <div class="flashcard-wrapper" id="flashcardWrapper" style="display:none;">
+                <div class="card-counter">
+                    <span id="cardIndex">1</span> / <span id="cardTotal">0</span>
+                </div>
+                <div class="flashcard" id="flashcard" tabindex="0">
+                    <div class="flashcard-inner" id="flashcardInner">
+                        <div class="flashcard-front">
+                            <div class="card-side-label">Question</div>
+                            <div class="card-content" id="frontContent"></div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="card-side-label">Answer</div>
+                            <div class="card-content" id="backContent"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-nav">
+                    <button class="btn btn-secondary" id="prevBtn">← Prev</button>
+                    <button class="btn btn-review" id="markReviewBtn">Needs Review</button>
+                    <button class="btn btn-known" id="markKnownBtn">Known</button>
+                    <button class="btn btn-secondary" id="nextBtn">Next →</button>
+                </div>
+                <p class="hint card-hint">Click card or press <kbd>Space</kbd> to flip · <kbd>←</kbd> <kbd>→</kbd> to navigate · <kbd>K</kbd> known · <kbd>R</kbd> review</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

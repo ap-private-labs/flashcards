@@ -1,0 +1,438 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+.subtitle {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
+}
+
+/* Class Tabs */
+.class-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.class-tab {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #94a3b8;
+    padding: 0.5rem 1.25rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: all 0.2s;
+}
+
+.class-tab:hover {
+    border-color: #3b82f6;
+    color: #e2e8f0;
+}
+
+.class-tab.active {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+.class-tab .tab-count {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin-left: 0.35rem;
+}
+
+.class-tab .tab-remove {
+    margin-left: 0.5rem;
+    color: #64748b;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.class-tab .tab-remove:hover {
+    color: #ef4444;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background: #3b82f6;
+    color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: #2563eb;
+}
+
+.btn-secondary {
+    background: #334155;
+    color: #e2e8f0;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: #475569;
+}
+
+.btn-known {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+    border: 1px solid #22c55e;
+}
+
+.btn-known:hover:not(:disabled) {
+    background: rgba(34, 197, 94, 0.25);
+}
+
+.btn-review {
+    background: rgba(251, 191, 36, 0.15);
+    color: #fbbf24;
+    border: 1px solid #fbbf24;
+}
+
+.btn-review:hover:not(:disabled) {
+    background: rgba(251, 191, 36, 0.25);
+}
+
+.btn-filter {
+    background: #1e293b;
+    color: #94a3b8;
+    border: 1px solid #334155;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.8rem;
+}
+
+.btn-filter:hover {
+    border-color: #3b82f6;
+    color: #e2e8f0;
+}
+
+.btn-filter.active {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+.badge {
+    display: inline-block;
+    background: #334155;
+    color: #94a3b8;
+    font-size: 0.7rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 10px;
+    margin-left: 0.25rem;
+    min-width: 1.2rem;
+    text-align: center;
+}
+
+.badge-review {
+    background: rgba(251, 191, 36, 0.2);
+    color: #fbbf24;
+}
+
+.badge-known {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+}
+
+.filter-group {
+    display: flex;
+    gap: 0.35rem;
+}
+
+.file-upload {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 6px;
+    background: #334155;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #22c55e;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+.progress-label {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #64748b;
+}
+
+.empty-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.empty-state p {
+    margin-bottom: 0.5rem;
+}
+
+.hint {
+    font-size: 0.8rem;
+    color: #475569;
+}
+
+.hint code {
+    background: #1e293b;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.75rem;
+}
+
+.hint kbd {
+    background: #1e293b;
+    border: 1px solid #334155;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.75rem;
+}
+
+.card-hint {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Card Counter */
+.card-counter {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 0.75rem;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Flashcard */
+.flashcard-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flashcard {
+    width: 100%;
+    max-width: 650px;
+    height: 350px;
+    perspective: 1000px;
+    cursor: pointer;
+    outline: none;
+}
+
+.flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+.flashcard.flipped .flashcard-inner {
+    transform: rotateY(180deg);
+}
+
+.flashcard-front, .flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.flashcard-front {
+    border-top: 3px solid #3b82f6;
+}
+
+.flashcard-back {
+    transform: rotateY(180deg);
+    border-top: 3px solid #8b5cf6;
+}
+
+.flashcard:hover .flashcard-front,
+.flashcard:hover .flashcard-back {
+    border-color: #3b82f6;
+    border-top-color: #3b82f6;
+}
+
+.flashcard:hover .flashcard-back {
+    border-top-color: #8b5cf6;
+}
+
+.card-side-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: #64748b;
+    margin-bottom: 1rem;
+}
+
+.flashcard-front .card-side-label {
+    color: #3b82f6;
+}
+
+.flashcard-back .card-side-label {
+    color: #8b5cf6;
+}
+
+.card-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #f8fafc;
+    text-align: center;
+    line-height: 1.8;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Card status indicators */
+.flashcard[data-status="known"] .flashcard-front {
+    border-top-color: #22c55e;
+}
+
+.flashcard[data-status="review"] .flashcard-front {
+    border-top-color: #fbbf24;
+}
+
+/* Card Nav */
+.card-nav {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 1.25rem 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .flashcard {
+        height: 300px;
+    }
+
+    .card-content {
+        font-size: 0.95rem;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .card-nav {
+        flex-direction: column;
+        width: 100%;
+        max-width: 650px;
+    }
+
+    .card-nav .btn {
+        width: 100%;
+    }
+
+    .filter-group {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* MathJax overrides for dark mode */
+mjx-container {
+    color: #f8fafc !important;
+}
