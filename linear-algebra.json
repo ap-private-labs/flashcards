@@ -1,0 +1,357 @@
+{
+  "class": "Linear Algebra",
+  "cards": [
+    {
+      "front": "State the definition of Vector space.",
+      "back": "A set $V$ is a \\emph{vector space} over $\\mathbb{R}$ if it is closed under addition and scalar multiplication, i.e.\n\\[\n u,v\\in V \\implies u+v\\in V, \\qquad \\lambda\\in\\mathbb{R},\\ v\\in V \\implies \\lambda v\\in V,\n\\]\nand contains a zero element."
+    },
+    {
+      "front": "State the definition of Subspace.",
+      "back": "A subset $U\\subseteq V$ is a \\emph{subspace} if it is itself a vector space under the induced operations; equivalently, $U\\neq\\varnothing$ and for all $u,v\\in U$ and $\\lambda\\in\\mathbb{R}$,\n\\[\n u+v\\in U, \\qquad \\lambda u\\in U.\n\\]"
+    },
+    {
+      "front": "State the definition of Norm.",
+      "back": "A function $\\|\\cdot\\|:V\\to\\mathbb{R}$ is a \\emph{norm} if for all $v,w\\in V$ and $\\lambda\\in\\mathbb{R}$:\n(1) $\\|v\\|\\ge 0$ and $\\|v\\|=0$ iff $v=0$;\n(2) $\\|\\lambda v\\|=|\\lambda|\\,\\|v\\|$;\n(3) $\\|v+w\\|\\le \\|v\\|+\\|w\\|$."
+    },
+    {
+      "front": "State the definition of Normed vector space.",
+      "back": "Given a vector space $V$ and a norm $\\|\\cdot\\|$, the pair $(V,\\|\\cdot\\|)$ is called a \\emph{normed vector space}."
+    },
+    {
+      "front": "State the definition of Equivalent norms.",
+      "back": "Two norms $\\|\\cdot\\|_a$ and $\\|\\cdot\\|_b$ on $V$ are \\emph{equivalent} if there exist constants $0<c\\le C<\\infty$ such that for all $v\\in V$,\n\\[\n c\\|v\\|_a \\le \\|v\\|_b \\le C\\|v\\|_a.\n\\]"
+    },
+    {
+      "front": "State the theorem of Finite-dimensional norm equivalence.",
+      "back": "On any finite-dimensional vector space, all norms are equivalent."
+    },
+    {
+      "front": "State the definition of Inner product.",
+      "back": "An \\emph{inner product} on a vector space $V$ is a map $\\langle\\cdot,\\cdot\\rangle:V\\times V\\to\\mathbb{R}$ such that for all $u,v,w\\in V$ and $\\alpha\\in\\mathbb{R}$:\n(1) $\\langle v,v\\rangle\\ge 0$ and $\\langle v,v\\rangle=0$ iff $v=0$;\n(2) $\\langle v,w\\rangle=\\langle w,v\\rangle$;\n(3) $\\langle \\alpha v,w\\rangle=\\alpha\\langle v,w\\rangle$;\n(4) $\\langle v,w+u\\rangle=\\langle v,w\\rangle+\\langle v,u\\rangle$."
+    },
+    {
+      "front": "State the theorem of Inner products induce norms.",
+      "back": "If $\\langle\\cdot,\\cdot\\rangle$ is an inner product on $V$, then\n\\[\n \\|v\\| := \\sqrt{\\langle v,v\\rangle}\n\\]\ndefines a norm on $V$."
+    },
+    {
+      "front": "State the theorem of Completeness of $C[a,b.",
+      "back": "$ with the sup norm]\nThe space\n\\[\n C[a,b] := \\{f:[a,b]\\to\\mathbb{R}: f \\text{ continuous}\\}\n\\]\nis complete when equipped with the supremum norm\n\\[\n \\|f\\|_\\infty := \\sup_{x\\in[a,b]} |f(x)|.\n\\]"
+    },
+    {
+      "front": "State the definition of Open ball.",
+      "back": "For a normed space $(V,\\|\\cdot\\|)$, the open ball centered at $u\\in V$ of radius $r>0$ is\n\\[\n B_r(u):=\\{v\\in V:\\|v-u\\|<r\\}.\n\\]"
+    },
+    {
+      "front": "State the definition of Convergent sequence.",
+      "back": "A sequence $v^{(n)}$ in a normed space converges to $v$ if\n\\[\n \\|v^{(n)}-v\\|\\to 0 \\quad \\text{as } n\\to\\infty.\n\\]"
+    },
+    {
+      "front": "State the definition of Closed set and closure.",
+      "back": "A set $S\\subseteq V$ is \\emph{closed} if it contains all limits of convergent sequences in $S$. The \\emph{closure} of $S$, denoted $\\overline S$, is the set obtained by adjoining to $S$ all limits of convergent sequences from $S$."
+    },
+    {
+      "front": "State the definition of Cauchy sequence.",
+      "back": "A sequence $v^{(n)}$ in a normed space is \\emph{Cauchy} if for every $\\varepsilon>0$ there exists $N\\in\\mathbb{N}$ such that for all $m,n\\ge N$,\n\\[\n \\|v^{(n)}-v^{(m)}\\|<\\varepsilon.\n\\]"
+    },
+    {
+      "front": "State the definition of Complete space, Banach space, Hilbert space.",
+      "back": "A normed vector space is \\emph{complete} if every Cauchy sequence converges in the space. A complete normed vector space is a \\emph{Banach space}. A complete inner product space is a \\emph{Hilbert space}."
+    },
+    {
+      "front": "State the definition of Convex function.",
+      "back": "Let $X$ be a vector space and $C\\subseteq X$ be convex. A function $f:C\\to\\mathbb{R}$ is \\emph{convex} if for all $u,v\\in C$ and all $\\theta\\in[0,1]$,\n\\[\n f(\\theta u+(1-\\theta)v) \\le \\theta f(u)+(1-\\theta)f(v).\n\\]"
+    },
+    {
+      "front": "State the definition of Conjugate exponents.",
+      "back": "Numbers $p,q\\in[1,\\infty]$ are \\emph{conjugate} if\n\\[\n \\frac1p+\\frac1q=1.\n\\]"
+    },
+    {
+      "front": "State the theorem of Finite-dimensional completeness.",
+      "back": "Every finite-dimensional normed vector space is complete."
+    },
+    {
+      "front": "State the theorem of $\\ell^p$ is Banach.",
+      "back": "For every $p\\in[1,\\infty]$, the sequence space $\\ell^p$ is a Banach space."
+    },
+    {
+      "front": "State the definition of Linear operator.",
+      "back": "Let $(V,\\|\\cdot\\|_V)$ and $(W,\\|\\cdot\\|_W)$ be normed spaces. A map $L:V\\to W$ is \\emph{linear} if for all $u,v\\in V$ and $\\alpha\\in\\mathbb{R}$,\n\\[\n L(\\alpha u+v)=\\alpha L(u)+L(v).\n\\]"
+    },
+    {
+      "front": "State the definition of Bounded linear operator.",
+      "back": "A linear map $L:V\\to W$ is \\emph{bounded} if there exists $K\\ge 0$ such that\n\\[\n \\|Lv\\|_W\\le K\\|v\\|_V \\qquad \\forall v\\in V.\n\\]"
+    },
+    {
+      "front": "State the definition of Operator norm.",
+      "back": "For a bounded linear operator $L:V\\to W$, its operator norm is\n\\[\n \\|L\\|_{\\mathcal L(V,W)}:=\\sup_{v\\ne 0}\\frac{\\|Lv\\|_W}{\\|v\\|_V}=\\sup_{\\|v\\|_V=1}\\|Lv\\|_W.\n\\]"
+    },
+    {
+      "front": "State the theorem of Bounded operators form a Banach space.",
+      "back": "If $W$ is Banach, then $\\mathcal L(V,W)$ equipped with the operator norm is a Banach space."
+    },
+    {
+      "front": "State the definition of Outer product.",
+      "back": "Let $H$ be a Hilbert space and $a,b\\in H$. The \\emph{outer product} $a\\otimes b\\in\\mathcal L(H,H)$ is defined by\n\\[\n (a\\otimes b)(x)=\\langle b,x\\rangle a.\n\\]"
+    },
+    {
+      "front": "State the definition of Dual space.",
+      "back": "If $(X,\\|\\cdot\\|)$ is a normed vector space, its \\emph{dual space} is\n\\[\n X^*:=\\mathcal L(X,\\mathbb{R}),\n\\]\nwith norm\n\\[\n \\|f\\|_{X^*}:=\\sup_{x\\ne 0}\\frac{|f(x)|}{\\|x\\|}.\n\\]"
+    },
+    {
+      "front": "State the definition of Isometric isomorphism.",
+      "back": "Normed spaces $(X,\\|\\cdot\\|_X)$ and $(Y,\\|\\cdot\\|_Y)$ are \\emph{isometrically isomorphic} if there exists a bijective linear map $L:X\\to Y$ such that\n\\[\n \\|Lx\\|_Y=\\|x\\|_X \\qquad \\forall x\\in X.\n\\]"
+    },
+    {
+      "front": "State the theorem of Dual of $\\ell^q$.",
+      "back": "If $1\\le q<\\infty$ and $p$ is the conjugate exponent to $q$, then\n\\[\n (\\ell^q)^* \\cong \\ell^p\n\\]\nisometrically. More precisely, every $w\\in\\ell^p$ defines a bounded linear functional on $\\ell^q$ by\n\\[\n f_w(v)=\\sum_{j=1}^\\infty v_j w_j,\n\\]\nand every element of $(\\ell^q)^*$ is of this form."
+    },
+    {
+      "front": "State the definition of Standard basis in $\\ell^p$.",
+      "back": "For $1\\le p<\\infty$, let $e^{(n)}\\in\\ell^p$ denote the sequence with $(e^{(n)})_j=\\delta_{jn}$. Then $\\|e^{(n)}\\|_{\\ell^p}=1$."
+    },
+    {
+      "front": "State the theorem of Hahn--Banach.",
+      "back": "Let $(X,\\|\\cdot\\|)$ be a normed space, let $U\\subseteq X$ be a subspace, and let $f:U\\to\\mathbb{R}$ be linear and bounded. Then there exists an extension $F:X\\to\\mathbb{R}$ such that\n\\[\n F|_U=f, \\qquad \\|F\\|_{X^*}=\\|f\\|_{U^*}.\n\\]"
+    },
+    {
+      "front": "State the theorem of Separation of points by dual functionals.",
+      "back": "If $x,y\\in X$ and $x\\ne y$, then there exists $f\\in X^*$ such that\n\\[\n f(x)\\ne f(y).\n\\]\nEquivalently, for every nonzero $x\\in X$ there exists $f\\in X^*$ with $f(x)\\ne 0$."
+    },
+    {
+      "front": "State the definition of Weak convergence.",
+      "back": "A sequence $x^{(n)}$ in a Banach space $X$ converges \\emph{weakly} to $x\\in X$, written $x^{(n)}\\rightharpoonup x$, if for every $f\\in X^*$,\n\\[\n f(x^{(n)})\\to f(x).\n\\]"
+    },
+    {
+      "front": "State the theorem of Weak convergence implies boundedness.",
+      "back": "If $x^{(n)}\\rightharpoonup x$ in a Banach space $X$, then the sequence $\\{x^{(n)}\\}$ is bounded in norm."
+    },
+    {
+      "front": "State the definition of Dense subset, separable space, closure.",
+      "back": "For $A\\subseteq X$:\n- $A$ is \\emph{dense} in $X$ if for every $x\\in X$ and every $\\varepsilon>0$ there exists $a\\in A$ such that $\\|x-a\\|<\\varepsilon$;\n- $X$ is \\emph{separable} if it contains a countable dense subset;\n- the closure of $A$ is denoted $\\overline A$."
+    },
+    {
+      "front": "State the theorem of Characterization of separability.",
+      "back": "A normed space $X$ is separable if and only if it contains a countable dense subset."
+    },
+    {
+      "front": "State the theorem of $\\ell^p$-inclusion.",
+      "back": "If $1\\le p\\le s\\le\\infty$, then\n\\[\n \\ell^p \\subseteq \\ell^s,\n\\]\nand for every $u\\in\\ell^p$,\n\\[\n \\|u\\|_{\\ell^s}\\le \\|u\\|_{\\ell^p}.\n\\]"
+    },
+    {
+      "front": "State the definition of Continuous embedding.",
+      "back": "Let $(X,\\|\\cdot\\|_X)$ and $(Y,\\|\\cdot\\|_Y)$ be normed spaces with $X\\subseteq Y$. We say that $X$ is \\emph{continuously embedded} in $Y$, and write\n\\[\n X\\hookrightarrow Y,\n\\]\nif there exists $C>0$ such that\n\\[\n \\|x\\|_Y\\le C\\|x\\|_X \\qquad \\forall x\\in X.\n\\]"
+    },
+    {
+      "front": "State the theorem of Norm inequality criterion for continuous embedding.",
+      "back": "If $X\\subseteq Y$, then the inclusion map $i:X\\to Y$, $i(x)=x$, is bounded if and only if there exists $C>0$ such that\n\\[\n \\|x\\|_Y\\le C\\|x\\|_X \\qquad \\forall x\\in X.\n\\]"
+    },
+    {
+      "front": "State the definition of Equivalent normed spaces.",
+      "back": "If $X$ and $Y$ are vector spaces with the same underlying set and each is continuously embedded in the other, we say that they are \\emph{equivalent} as normed spaces."
+    },
+    {
+      "front": "State the theorem of Equivalent spaces and equivalent norms.",
+      "back": "If $X$ and $Y$ have the same underlying vector space, then $X$ and $Y$ are equivalent iff their norms are equivalent."
+    },
+    {
+      "front": "State the definition of Weighted sequence spaces $X^s$.",
+      "back": "For $s\\in\\mathbb{R}$, define\n\\[\n X^s:=\\Bigl\\{v=(v_j)_{j\\ge1}: \\sum_{j=1}^\\infty j^{2s}|v_j|^2<\\infty\\Bigr\\},\n\\]\nwith norm\n\\[\n \\|v\\|_{X^s}^2:=\\sum_{j=1}^\\infty j^{2s}|v_j|^2.\n\\]"
+    },
+    {
+      "front": "State the theorem of Continuous embedding of weighted spaces.",
+      "back": "For $s>0$, $X^s$ is continuously embedded into $\\ell^r$ for suitable $r$, in particular into $\\ell^2$, and the embedding gains summability as $s$ increases. (In the handwritten notes this is stated in the form $X^s\\subset \\ell^r$ for $r$ in the admissible range.)"
+    },
+    {
+      "front": "State the definition of Compact set in a Banach space.",
+      "back": "A subset $B\\subset X$ of a Banach space is \\emph{compact} if every sequence in $B$ has a convergent subsequence with limit in $B$."
+    },
+    {
+      "front": "State the definition of Relatively compact subset.",
+      "back": "A subset $S\\subset X$ is \\emph{relatively compact} if its closure is compact."
+    },
+    {
+      "front": "State the definition of Compact operator.",
+      "back": "A linear map $L:X\\to Y$ between Banach spaces is \\emph{compact} if it maps bounded subsets of $X$ to relatively compact subsets of $Y$."
+    },
+    {
+      "front": "State the theorem of Characterization of compact operators.",
+      "back": "A linear operator $L:X\\to Y$ is compact if and only if for every bounded sequence $\\{x_n\\}\\subset X$, the sequence $\\{Lx_n\\}\\subset Y$ has a convergent subsequence."
+    },
+    {
+      "front": "State the theorem of Compact operators are bounded.",
+      "back": "If $L:X\\to Y$ is compact and linear, then $L\\in\\mathcal L(X,Y)$."
+    },
+    {
+      "front": "State the theorem of Composition with bounded maps preserves compactness.",
+      "back": "Let $X,Y,Z$ be Banach spaces. If $A\\in\\mathcal L(Y,Z)$ and $L\\in\\mathcal C(X,Y)$ is compact, then $A\\circ L\\in\\mathcal C(X,Z)$. Likewise, if $L\\in\\mathcal C(X,Y)$ and $B\\in\\mathcal L(W,X)$, then $L\\circ B\\in\\mathcal C(W,Y)$."
+    },
+    {
+      "front": "State the definition of Compact embedding.",
+      "back": "We say that $X$ is \\emph{compactly embedded} in $Y$, written\n\\[\n X\\Subset Y,\n\\]\nif the inclusion map $X\\to Y$ is compact."
+    },
+    {
+      "front": "State the theorem of Transitivity of compact embedding.",
+      "back": "If $X\\Subset Y$ and $Y\\Subset Z$, then $X\\Subset Z$."
+    },
+    {
+      "front": "State the theorem of Compact plus continuous gives compact.",
+      "back": "If $X\\Subset Y$ and $Y\\hookrightarrow Z$, then $X\\Subset Z$."
+    },
+    {
+      "front": "State the theorem of Compactness turns weak convergence into strong convergence.",
+      "back": "If $X\\Subset Y$ and $x_n\\rightharpoonup x$ in $X$, then\n\\[\n x_n\\to x \\quad \\text{strongly in } Y.\n\\]"
+    },
+    {
+      "front": "State the definition of Schauder basis.",
+      "back": "A sequence $(\\varphi_j)_{j\\ge1}$ in a Hilbert space $H$ is a \\emph{Schauder basis} if every $v\\in H$ admits a unique expansion\n\\[\n v=\\sum_{j=1}^\\infty v_j\\varphi_j.\n\\]"
+    },
+    {
+      "front": "State the theorem of Closest point theorem.",
+      "back": "Let $U\\subset H$ be a nonempty closed convex set in a Hilbert space $H$. Then for every $z\\in H$ there exists a unique $u\\in U$ such that\n\\[\n \\|z-u\\| = \\inf_{v\\in U} \\|z-v\\|.\n\\]"
+    },
+    {
+      "front": "State the definition of Orthogonality and orthogonal complement.",
+      "back": "For $u,v\\in H$, we say that $u$ is \\emph{orthogonal} to $v$, written $u\\perp v$, if $\\langle u,v\\rangle=0$. For a subset $U\\subset H$, its \\emph{orthogonal complement} is\n\\[\n U^\\perp := \\{v\\in H: \\langle v,u\\rangle=0\\ \\forall u\\in U\\}.\n\\]"
+    },
+    {
+      "front": "State the definition of Complete orthonormal basis.",
+      "back": "A family $(\\varphi^{(j)})_{j\\ge1}$ is a \\emph{complete orthonormal basis} (ONB) of $H$ if it is orthonormal and its linear span is dense in $H$."
+    },
+    {
+      "front": "State the theorem of Orthogonal decomposition.",
+      "back": "If $U\\subset H$ is a closed subspace, then every $v\\in H$ has a unique decomposition\n\\[\n v=u+w, \\qquad u\\in U,\\ w\\in U^\\perp,\n\\]\nso that\n\\[\n H=U\\oplus U^\\perp.\n\\]\nMoreover, $u$ is the closest point in $U$ to $v$."
+    },
+    {
+      "front": "State the definition of Orthogonal projection.",
+      "back": "Given a closed subspace $U\\subset H$, the \\emph{orthogonal projection} onto $U$ is the map $P_U:H\\to H$ defined by\n\\[\n P_U v = u,\n\\]\nwhere $v=u+w$ with $u\\in U$ and $w\\in U^\\perp$."
+    },
+    {
+      "front": "State the theorem of Properties of orthogonal projections.",
+      "back": "For a closed subspace $U\\subset H$, the orthogonal projection $P_U$ is linear, bounded, satisfies $\\|P_U\\|\\le 1$, and obeys\n\\[\n P_U^2=P_U, \\qquad P_U^*=P_U.\n\\]"
+    },
+    {
+      "front": "State the theorem of Characterizations of ONB.",
+      "back": "Let $H$ have an orthonormal basis $(\\varphi^{(j)})_{j\\ge1}$. Then for every $v\\in H$:\n(1) $v=\\sum_{j=1}^\\infty \\langle v,\\varphi^{(j)}\\rangle\\varphi^{(j)}$;\n(2) $\\|v\\|^2=\\sum_{j=1}^\\infty |\\langle v,\\varphi^{(j)}\\rangle|^2$ (Parseval);\n(3) $H^*\\cong H$ via the Riesz representation map."
+    },
+    {
+      "front": "State the definition of Adjoint.",
+      "back": "Let $H_1,H_2$ be Hilbert spaces and $T\\in\\mathcal L(H_1,H_2)$. The \\emph{adjoint} $T^*\\in\\mathcal L(H_2,H_1)$ is defined by\n\\[\n \\langle Tu,v\\rangle_{H_2}=\\langle u,T^*v\\rangle_{H_1}\n\\qquad \\forall u\\in H_1,\\ v\\in H_2.\n\\]"
+    },
+    {
+      "front": "State the definition of Numerical range.",
+      "back": "For $A\\in\\mathcal L(H)$, the \\emph{numerical range} is\n\\[\n \\Sigma(A):=\\{\\langle Au,u\\rangle: \\|u\\|=1\\}.\n\\]\nFor symmetric operators the handwritten notes define a lower bound parameter by\n\\[\n \\lambda(A):=\\inf \\Sigma(A).\n\\]"
+    },
+    {
+      "front": "State the theorem of Norm from the numerical range for positive symmetric operators.",
+      "back": "If $A\\in\\mathcal L(H)$ is positive and symmetric, then\n\\[\n \\|A\\|_{\\mathcal L(H)} = \\sup \\Sigma(A).\n\\]"
+    },
+    {
+      "front": "State the definition of Positive operator.",
+      "back": "A symmetric operator $A\\in\\mathcal L(H)$ is \\emph{positive} if\n\\[\n \\langle Au,u\\rangle \\ge 0 \\qquad \\forall u\\in H.\n\\]\nEquivalently, its spectrum lies in $[0,\\infty)$."
+    },
+    {
+      "front": "State the theorem of Spectral information for symmetric compact operators.",
+      "back": "If $A\\in\\mathcal L(H)$ is symmetric and compact, then the nonzero eigenvalues of $A$ are real, and the corresponding eigenspaces yield an orthonormal basis of the closure of the range generated by eigenvectors."
+    },
+    {
+      "front": "State the definition of Hilbert--Schmidt norm.",
+      "back": "Let $(\\varphi^{(j)})_{j\\ge1}$ be an ONB of $H$. For $T\\in\\mathcal L(H)$ define\n\\[\n \\|T\\|_{HS}^2:=\\sum_{j=1}^\\infty \\|T\\varphi^{(j)}\\|^2.\n\\]\nIf this sum is finite, then $T$ is called a \\emph{Hilbert--Schmidt operator}."
+    },
+    {
+      "front": "State the theorem of Hilbert--Schmidt space.",
+      "back": "The Hilbert--Schmidt operators form a Hilbert space with inner product\n\\[\n \\langle T,S\\rangle_{HS}:=\\sum_{j=1}^\\infty \\langle T\\varphi^{(j)},S\\varphi^{(j)}\\rangle,\n\\]\nand the Hilbert--Schmidt norm is independent of the chosen orthonormal basis."
+    },
+    {
+      "front": "State the theorem of Hilbert--Schmidt embedding.",
+      "back": "Every Hilbert--Schmidt operator is compact; indeed,\n\\[\n \\|T\\|_{\\mathcal L(H)}\\le \\|T\\|_{HS}.\n\\]"
+    },
+    {
+      "front": "State the theorem of Spectral theorem for compact symmetric operators.",
+      "back": "Let $A\\in\\mathcal L(H)$ satisfy:\n(1) $\\ker A=\\{0\\}$;\n(2) $A$ is symmetric;\n(3) $A$ is compact.\nThen there exists a countable set of eigenpairs $(\\varphi^{(j)},\\lambda_j)$ such that $(\\varphi^{(j)})$ is an ONB of $H$, each $A\\varphi^{(j)}=\\lambda_j\\varphi^{(j)}$, and $\\lambda_j\\to 0$."
+    },
+    {
+      "front": "State the theorem of Low-rank approximation / spectral expansion.",
+      "back": "For a compact symmetric operator with eigenpairs $(\\varphi^{(j)},\\lambda_j)$,\n\\[\n A = \\sum_{j=1}^\\infty \\lambda_j\\, \\varphi^{(j)}\\otimes \\varphi^{(j)},\n\\qquad\n \\|A\\|=|\\lambda_1|,\n\\]\nand the truncated sums give optimal finite-rank approximations in the operator norm / Hilbert--Schmidt norm formulations recorded in the notes."
+    },
+    {
+      "front": "State the definition of Singular values.",
+      "back": "For a compact operator $K$, the \\emph{singular values} are\n\\[\n \\sigma_j(K)=\\sqrt{\\lambda_j(K^*K)},\n\\]\nwhere $\\lambda_j(K^*K)$ are the eigenvalues of the positive compact operator $K^*K$."
+    },
+    {
+      "front": "State the theorem of SVD for compact operators.",
+      "back": "Let $K\\in\\mathcal L(H)$ be compact. Then there exist orthonormal sets $(u_j)$ and $(v_j)$ and singular values $\\sigma_j\\downarrow0$ such that\n\\[\n K = \\sum_{j=1}^\\infty \\sigma_j\\, u_j\\otimes v_j,\n\\qquad\n K^* = \\sum_{j=1}^\\infty \\sigma_j\\, v_j\\otimes u_j.\n\\]\nIf additionally $K$ is self-adjoint then the left and right singular vectors coincide up to signs."
+    },
+    {
+      "front": "State the definition of Weak derivatives and Sobolev norm in one dimension.",
+      "back": "For $u:\\mathbb{R}\\to\\mathbb{R}$, weak derivatives are defined distributionally. The $H^1$-norm is\n\\[\n \\|u\\|_{H^1}^2 = \\int_{\\mathbb R}|u(x)|^2\\,dx + \\int_{\\mathbb R}|u'(x)|^2\\,dx.\n\\]\nLikewise,\n\\[\n H^1(\\mathbb R)=\\{u\\in L^2(\\mathbb R): u'\\in L^2(\\mathbb R)\\}.\n\\]"
+    },
+    {
+      "front": "State the theorem of Sobolev--Fourier characterization of $H^1$.",
+      "back": "A function $u\\in L^2(\\mathbb R)$ belongs to $H^1(\\mathbb R)$ iff\n\\[\n \\int_{\\mathbb R}(1+|\\omega|^2)|\\widehat u(\\omega)|^2\\,d\\omega<\\infty,\n\\]\nand this quantity is equivalent to the $H^1$ norm."
+    },
+    {
+      "front": "State the theorem of One-dimensional interpolation inequality.",
+      "back": "For suitable exponents (as written in the notes),\n\\[\n \\|u\\|_{L^q} \\le \\|u\\|_{L^2}^{\\theta}\\,\\|u\\|_{H^1}^{1-\\theta}\n\\]\nwith the exponent relation determined by $q$ and $\\theta$."
+    },
+    {
+      "front": "State the theorem of Gagliardo--Nirenberg inequality, 1D form.",
+      "back": "For $1\\le p<q<\\infty$ and appropriate $\\alpha\\in(0,1)$,\n\\[\n \\|u\\|_{L^q} \\le C\\,\\|u\\|_{H^1}^{\\alpha}\\|u\\|_{L^p}^{1-\\alpha}.\n\\]"
+    },
+    {
+      "front": "State the definition of Jordan normal form.",
+      "back": "For $A\\in\\mathbb C^{n\\times n}$, a \\emph{Jordan normal form} is a block diagonal matrix\n\\[\n J=\\operatorname{diag}(J_{n_1}(\\lambda_1),\\dots,J_{n_k}(\\lambda_k))\n\\]\nsimilar to $A$, where each Jordan block is\n\\[\n J_m(\\lambda)=\n \\begin{pmatrix}\n \\lambda & 1 & & 0\\\\\n & \\lambda & \\ddots & \\\\\n & & \\ddots & 1\\\\\n 0 & & & \\lambda\n \\end{pmatrix}.\n\\]"
+    },
+    {
+      "front": "State the definition of Characteristic polynomial, algebraic and geometric multiplicity.",
+      "back": "For $A\\in\\mathbb C^{n\\times n}$, the \\emph{characteristic polynomial} is\n\\[\n \\chi_A(z)=\\det(zI-A).\n\\]\nIf $\\lambda$ is an eigenvalue, its \\emph{algebraic multiplicity} is its multiplicity as a root of $\\chi_A$, and its \\emph{geometric multiplicity} is\n\\[\n \\dim\\ker(A-\\lambda I).\n\\]"
+    },
+    {
+      "front": "State the definition of Spectral radius.",
+      "back": "For $A\\in\\mathbb C^{n\\times n}$, the \\emph{spectral radius} is\n\\[\n \\rho(A):=\\max\\{ |\\lambda| : \\lambda\\in \\sigma(A)\\}.\n\\]"
+    },
+    {
+      "front": "State the theorem of Basic spectral-radius bounds.",
+      "back": "For any induced matrix norm,\n\\[\n \\rho(A)^k \\le \\rho(A^k) \\le \\|A^k\\| \\le \\|A\\|^k.\n\\]\nIn particular, $\\rho(A)\\le \\|A\\|$."
+    },
+    {
+      "front": "State the theorem of Adapted norm near the spectral radius.",
+      "back": "For every $\\delta>0$, there exists an induced matrix norm such that\n\\[\n \\rho(A)\\le \\|A\\|\\le \\rho(A)+\\delta.\n\\]"
+    },
+    {
+      "front": "State the theorem of Gelfand formula.",
+      "back": "For any $A\\in\\mathbb C^{n\\times n}$ and any induced matrix norm,\n\\[\n \\rho(A)=\\lim_{k\\to\\infty}\\|A^k\\|^{1/k}.\n\\]"
+    },
+    {
+      "front": "State the definition of Operator power series.",
+      "back": "Let $(X,\\|\\cdot\\|)$ be a Banach space and $A\\in\\mathcal L(X)$. If\n\\[\n f(z)=\\sum_{j=0}^\\infty a_j z^j\n\\]\nhas radius of convergence $r$, define\n\\[\n f(A)=\\sum_{j=0}^\\infty a_j A^j,\n\\]\nwhenever $\\|A\\|<r$."
+    },
+    {
+      "front": "State the theorem of Convergence of operator power series.",
+      "back": "If $\\|A\\|<r$, then the series defining $f(A)$ converges in $\\mathcal L(X)$."
+    },
+    {
+      "front": "State the theorem of Matrix functional calculus from Jordan form.",
+      "back": "For $A\\in\\mathbb C^{n\\times n}$ with Jordan decomposition $A=SJS^{-1}$ and for sufficiently smooth/analytic $f$, one has\n\\[\n f(A)=Sf(J)S^{-1},\n\\]\nwhere on each Jordan block $J_m(\\lambda)$,\n\\[\n f(J_m(\\lambda))=\n \\begin{pmatrix}\n f(\\lambda) & f'(\\lambda) & \\frac{f''(\\lambda)}{2!} & \\cdots \\\\\n & f(\\lambda) & f'(\\lambda) & \\ddots \\\\\n & & \\ddots & \\ddots \\\\\n & & & f(\\lambda)\n \\end{pmatrix}.\n\\]"
+    },
+    {
+      "front": "State the theorem of Riesz representation theorem.",
+      "back": "Let $H$ be a Hilbert space. For every $f\\in H^*$ there exists a unique $w_f\\in H$ such that\n\\[\n f(v)=\\langle w_f,v\\rangle \\qquad \\forall v\\in H,\n\\]\nand\n\\[\n \\|w_f\\|=\\|f\\|_{H^*}.\n\\]\nHence $H^*\\cong H$ isometrically."
+    },
+    {
+      "front": "State the definition of Bilinear form.",
+      "back": "A map $B:H\\times H\\to\\mathbb R$ is a \\emph{bilinear form} if it is linear in each variable."
+    },
+    {
+      "front": "State the theorem of Inner product generated by a bilinear form.",
+      "back": "If $B$ is bounded, coercive, and symmetric on a Hilbert space $H$, then\n\\[\n \\langle u,v\\rangle_B := B(u,v)\n\\]\ndefines an inner product on $H$, and the induced norm is equivalent to the original norm on $H$."
+    },
+    {
+      "front": "State the theorem of Lax--Milgram.",
+      "back": "Let $H$ be a Hilbert space and let $B:H\\times H\\to\\mathbb R$ be bilinear, bounded, and coercive. Then for every $f\\in H^*$ there exists a unique $u\\in H$ such that\n\\[\n B(u,v)=f(v) \\qquad \\forall v\\in H,\n\\]\nand\n\\[\n \\|u\\|_H \\le \\alpha^{-1}\\|f\\|_{H^*},\n\\]\nwhere $\\alpha>0$ is the coercivity constant."
+    },
+    {
+      "front": "State the definition of Boundary value problem in weak form.",
+      "back": "In the one-dimensional model problem on $D=(a,b)$ with $a(x)\\ge a_{\\min}>0$, the weak bilinear form is\n\\[\n B(u,v)=\\int_D a(x)u_x(x)v_x(x)\\,dx,\n\\]\nand the boundary value problem is recast as: find $u\\in H_0^1(D)$ such that\n\\[\n B(u,v)=f(v) \\qquad \\forall v\\in H_0^1(D).\n\\]"
+    }
+  ]
+}
