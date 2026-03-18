@@ -366,7 +366,52 @@
         renderCard();
     }
 
+    // --- Auto-load bundled decks ---
+    const BUNDLED_DECKS = [
+        'linear-algebra.json',
+        'machine-learning.json'
+    ];
+
+    async function loadBundledDecks() {
+        for (const file of BUNDLED_DECKS) {
+            try {
+                const resp = await fetch(file);
+                if (!resp.ok) continue;
+                const json = await resp.json();
+                const deck = Array.isArray(json) ? json[0] : json;
+                const className = deck.class || deck.name || 'Untitled';
+                const cards = (deck.cards || []).map(c => ({
+                    front: c.front || c.question || '',
+                    back: c.back || c.answer || '',
+                    status: 'none'
+                }));
+                if (cards.length === 0) continue;
+
+                if (!classes[className]) {
+                    // New class — add all cards
+                    classes[className] = cards;
+                } else {
+                    // Existing class — merge new cards, keep progress on existing ones
+                    const existing = new Map(classes[className].map(c => [c.front, c]));
+                    for (const card of cards) {
+                        if (!existing.has(card.front)) {
+                            classes[className].push(card);
+                        }
+                    }
+                }
+            } catch (e) {
+                console.warn('Could not load deck:', file, e);
+            }
+        }
+
+        if (!activeClass || !classes[activeClass]) {
+            activeClass = Object.keys(classes)[0] || null;
+        }
+        save();
+        renderAll();
+    }
+
     // --- Init ---
     load();
-    renderAll();
+    loadBundledDecks();
 })();
